@@ -31,50 +31,20 @@ Pizza.prototype.calculatePrice = function() {
         "xxxlarge": 6
     };
 
+    // Get base price based on this size of this pizza
+    basePrice = basePrices[this.size];
 
-    switch (this.size) {
-        case "small":
-            basePrice = 11.99;
-            if (this.toppings.length > 1) {
-                totalPrice = basePrice + (this.toppings.length-1) * 1;
-            } else {
-                totalPrice = basePrice;
-            }
-            break;
-        case "medium":
-            basePrice = 13.99;
-            if (this.toppings.length > 1) {
-                totalPrice = basePrice + (this.toppings.length-1) * 2;
-            } else {
-                totalPrice = basePrice;
-            }
-            break;
-        case "large":
-            basePrice = 19.99;
-            if (this.toppings.length > 1) {
-                totalPrice = basePrice + (this.toppings.length-1) * 3;
-            } else {
-                totalPrice = basePrice;
-            }
-            break;
-        case "xlarge":
-            basePrice = 24.99;
-            if (this.toppings.length > 1) {
-                totalPrice = basePrice + (this.toppings.length-1) * 4;
-            } else {
-                totalPrice = basePrice;
-            }
-            break;
-        case "xxxlarge":
-            basePrice = 34.99;
-            if (this.toppings.length > 1) {
-                totalPrice = basePrice + (this.toppings.length-1) * 6;
-            } else {
-                totalPrice = basePrice;
-            }
-            break;
+    // Add extra depending on the toppings
+    if (this.toppings.length > 1) {
+        totalPrice = basePrice + (this.toppings.length-1) * toppingPrices[this.size];
+    } else {
+        totalPrice = basePrice;
     }
 
+    // Add extra for gf
+    if (this.glutenFree === true) {
+        totalPrice += 2;
+    }
 
     // Keep two decimal points
     this.price = parseFloat(totalPrice.toFixed(2));

@@ -223,5 +223,16 @@ describe('Pizza.calculatePrice', function() {
         expect(xxxlargeFourTop.price).to.equal(52.99);
     });
 
+    it("costs $2 extra for a gluten-free pizza", function() {
+        // Arrange
+        var smGf = new Pizza("small", ["mushrooms", "onions"], true);
+
+        // Act
+        smGf.calculatePrice();
+
+        // Assert
+        expect(smGf.price).to.equal(14.99);
+    })
+
 
 });

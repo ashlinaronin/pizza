@@ -114,4 +114,28 @@ describe('Pizza.calculatePrice', function() {
         // Assert
         expect(testPizza.price).to.equal(34.99);
     });
+
+    it("costs the same for one topping pizzas of any size", function() {
+        // Arrange
+        var smallOneTop = new Pizza("small", ["mushrooms"]);
+        var medOneTop = new Pizza("medium", ["mushrooms"]);
+        var largeOneTop = new Pizza("large", ["mushrooms"]);
+        var xlargeOneTop = new Pizza("xlarge", ["mushrooms"]);
+        var xxxlargeOneTop = new Pizza("xxxlarge", ["mushrooms"]);
+
+        // Act
+        smallOneTop.calculatePrice();
+        medOneTop.calculatePrice();
+        largeOneTop.calculatePrice();
+        xlargeOneTop.calculatePrice();
+        xxxlargeOneTop.calculatePrice();
+
+        // Assert
+        expect(smallOneTop.price).to.equal(11.99);
+        expect(smallOneTop.price).to.equal(13.99);
+        expect(smallOneTop.price).to.equal(19.99);
+        expect(smallOneTop.price).to.equal(24.99);
+        expect(smallOneTop.price).to.equal(34.99);
+
+    });
 });

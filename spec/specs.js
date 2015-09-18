@@ -136,6 +136,92 @@ describe('Pizza.calculatePrice', function() {
         expect(largeOneTop.price).to.equal(19.99);
         expect(xlargeOneTop.price).to.equal(24.99);
         expect(xxxlargeOneTop.price).to.equal(34.99);
-
     });
+
+    it("costs $1 more per topping for a small pizza", function() {
+        // Arrange
+        var smallTwoTop = new Pizza("small", ["mushrooms", "onions"]);
+        var smallThreeTop = new Pizza("small", ["mushrooms", "onions", "peppers"]);
+        var smallFourTop = new Pizza("small", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+
+        // Act
+        smallTwoTop.calculatePrice();
+        smallThreeTop.calculatePrice();
+        smallFourTop.calculatePrice();
+
+        // Assert
+        expect(smallTwoTop.price).to.equal(12.99);
+        expect(smallThreeTop.price).to.equal(13.99);
+        expect(smallFourTop.price).to.equal(14.99);
+    });
+
+    it("costs $2 more per topping for a medium pizza", function() {
+        // Arrange
+        var medTwoTop = new Pizza("medium", ["mushrooms", "onions"]);
+        var medThreeTop = new Pizza("medium", ["mushrooms", "onions", "peppers"]);
+        var medFourTop = new Pizza("medium", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+
+        // Act
+        medTwoTop.calculatePrice();
+        medThreeTop.calculatePrice();
+        medFourTop.calculatePrice();
+
+        // Assert
+        expect(medTwoTop.price).to.equal(15.99);
+        expect(medThreeTop.price).to.equal(17.99);
+        expect(medFourTop.price).to.equal(19.99);
+    });
+
+    it("costs $3 more per topping for a large pizza", function() {
+        // Arrange
+        var largeTwoTop = new Pizza("large", ["mushrooms", "onions"]);
+        var largeThreeTop = new Pizza("large", ["mushrooms", "onions", "peppers"]);
+        var largeFourTop = new Pizza("large", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+
+        // Act
+        largeTwoTop.calculatePrice();
+        largeThreeTop.calculatePrice();
+        largeFourTop.calculatePrice();
+
+        // Assert
+        expect(largeTwoTop.price).to.equal(22.99);
+        expect(largeThreeTop.price).to.equal(25.99);
+        expect(largeFourTop.price).to.equal(28.99);
+    });
+
+    it("costs $4 more per topping for an x-large pizza", function() {
+        // Arrange
+        var xlargeTwoTop = new Pizza("xlarge", ["mushrooms", "onions"]);
+        var xlargeThreeTop = new Pizza("xlarge", ["mushrooms", "onions", "peppers"]);
+        var xlargeFourTop = new Pizza("xlarge", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+
+        // Act
+        xlargeTwoTop.calculatePrice();
+        xlargeThreeTop.calculatePrice();
+        xlargeFourTop.calculatePrice();
+
+        // Assert
+        expect(xlargeTwoTop.price).to.equal(28.99);
+        expect(xlargeThreeTop.price).to.equal(32.99);
+        expect(xlargeFourTop.price).to.equal(36.99);
+    });
+
+    it("costs $6 more per topping for a xxx-large pizza", function() {
+        // Arrange
+        var xxxlargeTwoTop = new Pizza("xxxlarge", ["mushrooms", "onions"]);
+        var xxxlargeThreeTop = new Pizza("xxxlarge", ["mushrooms", "onions", "peppers"]);
+        var xxxlargeFourTop = new Pizza("xxxlarge", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+
+        // Act
+        xxxlargeTwoTop.calculatePrice();
+        xxxlargeThreeTop.calculatePrice();
+        xxxlargeFourTop.calculatePrice();
+
+        // Assert
+        expect(xxxlargeTwoTop.price).to.equal(40.99);
+        expect(xxxlargeThreeTop.price).to.equal(46.99);
+        expect(xxxlargeFourTop.price).to.equal(52.99);
+    });
+
+
 });

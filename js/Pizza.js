@@ -27,6 +27,15 @@ Pizza.prototype.calculatePrice = function() {
         "xxxlarge": 6
     };
 
+    var daiyaPrices = {
+        // 2 3 4 5 7
+        "small": 2,
+        "medium": 3,
+        "large": 4,
+        "xlarge": 5,
+        "xxxlarge": 7
+    }
+
     // Get base price based on this size of this pizza
     basePrice = basePrices[this.size];
 
@@ -39,6 +48,11 @@ Pizza.prototype.calculatePrice = function() {
 
     // Add extra for gf
     if (this.glutenFree) { totalPrice += 2; }
+
+    // Add extra for daiya
+    if ( this.toppings.indexOf("daiya") > -1) {
+        totalPrice += daiyaPrices[this.size];
+    }
 
     // Keep two decimal points
     this.price = parseFloat(totalPrice.toFixed(2));

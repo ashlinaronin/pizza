@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="well">
+      <div class="well" id="everything">
         <!-- All templates here -->
 
         <div id="order">
@@ -28,31 +28,33 @@
                 <option value="xxxlarge">xxx-large</option>
               </select>
             </div>
+            <h3 id="size-error">Please choose a size!</h3>
           </div>
 
           <div id="choose-toppings">
             <h1>choose toppings.</h1>
             <!-- find images and chnage urls -->
-            <div class="row">
-              <img src="img/mushrooms.gif" class="img-responsive topping-img btn col-xs-4" id="mushrooms" alt="mushrooms">
-              <img src="img/three-pigs.png" class="img-responsive topping-img btn col-xs-4" id="onions" alt="onions">
-              <img src="img/porky.ico" class="img-responsive topping-img btn col-xs-4" id="peppers" alt="peppers">
+            <div class="row-fluid">
+              <div class="col-xs-4"><img src="img/mushrooms.png" class="img-responsive topping-img btn center-block" id="mushrooms" alt="mushrooms"></div>
+              <div class="col-xs-4"><img src="img/onions.png" class="img-responsive topping-img btn center-block" id="onions" alt="onions"></div>
+              <div class="col-xs-4"><img src="img/peppers.png" class="img-responsive topping-img btn center-block" id="peppers" alt="peppers"></div>
             </div>
-            <div class="row">
-              <img src="img/rain-boots.jpeg" class="img-responsive topping-img btn col-xs-4" id="pepperoni" alt="pepperoni">
-              <img src="img/human-pig.jpeg" class="img-responsive topping-img btn col-xs-4" id="sausage" alt="sausage">
-              <img src="img/mrs-piggy.jpeg" class="img-responsive topping-img btn col-xs-4" id="chicken" alt="chicken">
+            <div class="row-fluid">
+              <div class="col-xs-4"><img src="img/pepperoni.png" class="img-responsive topping-img btn center-block" id="pepperoni" alt="pepperoni"></div>
+              <div class="col-xs-4"><img src="img/sausage.png" class="img-responsive topping-img btn center-block" id="sausage" alt="sausage"></div>
+              <div class="col-xs-4"><img src="img/chicken.png" class="img-responsive topping-img btn center-block" id="chicken" alt="chicken"></div>
             </div>
-            <div class="row">
-              <img src="img/rain-boots.jpeg" class="img-responsive topping-img btn col-xs-4" id="daiya" alt="daiya">
-              <img src="img/human-pig.jpeg" class="img-responsive topping-img btn col-xs-4" id="bacon-bits" alt="bacon-bits">
-              <img src="img/mrs-piggy.jpeg" class="img-responsive topping-img btn col-xs-4" id="pepperoncinis" alt="pepperoncinis">
+            <div class="row-fluid">
+              <div class="col-xs-4"><img src="img/daiya.png" class="img-responsive topping-img btn center-block" id="daiya" alt="daiya"></div>
+              <div class="col-xs-4"><img src="img/bacon-bits.png" class="img-responsive topping-img btn center-block" id="bacon-bits" alt="bacon-bits"></div>
+              <div class="col-xs-4"><img src="img/pepperoncinis.png" class="img-responsive topping-img btn center-block" id="pepperoncinis" alt="pepperoncinis"></div>
             </div>
             <p class="order-description"></p>
             <button class="btn btn-block" id="order-btn">order</button>
           </div>
 
         </div>
+        <!-- end order -->
 
 
         <div id="checkout">
@@ -71,8 +73,7 @@
           <button class="btn btn-block" id="new-order">new order</button>
         </div>
 
-
-      </div>
-    </div>
+      </div><!-- end well -->
+    </div><!-- end container -->
   </body>
 </html>

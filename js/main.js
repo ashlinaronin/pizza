@@ -59,7 +59,7 @@ $(document).ready(function() {
     });
   });
 
-  // Add chosen toppings to array of toppings
+  // Add chosen topping to array of toppings
   $("#choose-toppings img").click(function(event) {
     var thisTopping = $(this).attr('id');
 
@@ -75,9 +75,10 @@ $(document).ready(function() {
   // Done with order
   $("#order-btn").click(function(event) {
     if (typeof size === "undefined") {
-      window.alert("please choose a size.");
+      $("#size-error").hide().fadeIn();
     } else {
       pizza = new Pizza(size, toppings, glutenFree, vegan);
+      debugger;
       pizza.calculatePrice();
       $("#order-price").text("$" + pizza.price);
       $(".order-description").text(writeOrderDescription());
@@ -90,13 +91,10 @@ $(document).ready(function() {
     }
   });
 
+  // Update total price when quantity changes
   $("#quantity").change(function(event) {
     quantity = $("#quantity").val();
     var newOrderPrice = (pizza.price * quantity).toFixed(2);
-
-    console.log("newOrderPrice is " + newOrderPrice);
-    console.log("quantity is " + quantity);
-    console.log("desc is " + writeOrderDescription());
 
     $("#order-price").text("$" + newOrderPrice);
     $(".order-description").text(writeOrderDescription());
@@ -106,6 +104,4 @@ $(document).ready(function() {
   $("#new-order").click(function(event) {
     location.reload();
   });
-
-
 });

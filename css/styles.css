@@ -12,27 +12,19 @@ body {
 }
 
 .well {
-  /*background-color: #CEB7B3;*/
+  /*background-color: #F7F9F9;*/
+  /* white because some of the images don't have transparent backgrounds */
+  background-color: #FFFFFF;
   border-style: none;
 }
 
-select {
+#size, #size option, #quantity {
   background-color: #333232;
   color: #B7B7B7;
 }
 
 #order-btn, #new-order {
   background-color: #CA907E;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: Montserrat;
-}
-
-.topping-img {
-  /*border-radius: 30%;*/
-  /*max-width: 150px;*/
-  /*max-height: 150px;*/
 }
 
 #checkout {

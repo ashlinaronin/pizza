@@ -17,15 +17,15 @@ Pizza.prototype.calculatePrice = function() {
         "small": 11.99,
         "medium": 13.99,
         "large": 19.99,
-        "xlarge": 24.99,
-        "xxxlarge": 34.99
+        "x-large": 24.99,
+        "xxx-large": 34.99
     };
     var toppingPrices = {
         "small": 1,
         "medium": 2,
         "large": 3,
-        "xlarge": 4,
-        "xxxlarge": 6
+        "x-large": 4,
+        "xxx-large": 6
     };
 
     var daiyaPrices = {
@@ -33,8 +33,8 @@ Pizza.prototype.calculatePrice = function() {
         "small": 2,
         "medium": 3,
         "large": 4,
-        "xlarge": 5,
-        "xxxlarge": 7
+        "x-large": 5,
+        "xxx-large": 7
     }
 
     // Get base price based on this size of this pizza
@@ -56,6 +56,6 @@ Pizza.prototype.calculatePrice = function() {
     }
 
     // Keep two decimal points
-    this.price = totalPrice.toFixed(2);
-    return totalPrice.toFixed(2);
+    this.price = parseFloat(totalPrice.toFixed(2));
+    return parseFloat(totalPrice.toFixed(2));
 };

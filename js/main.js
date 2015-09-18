@@ -54,7 +54,7 @@ $(document).ready(function() {
   // Get size from size select menu
   $("#size").change(function() {
     $("#size option:selected").each(function() {
-      size = $(this).text();
+      size = $(this).val();
       $(".order-description").text(writeOrderDescription());
     });
   });

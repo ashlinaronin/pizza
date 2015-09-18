@@ -1,7 +1,7 @@
 describe('Pizza', function() {
     it("creates a Pizza with the given specifications", function() {
         // Arrange
-        var size = "xlarge";
+        var size = "x-large";
         var toppings = ["mushrooms", "olives", "sausage"];
         var glutenFree = false;
         var vegan = false;
@@ -18,7 +18,7 @@ describe('Pizza', function() {
 
     it("creates a Pizza without arguments for gf & vegan", function() {
         // Arrange
-        var size = "xlarge";
+        var size = "x-large";
         var toppings = ["mushrooms", "olives", "sausage"];
 
         // Act
@@ -33,7 +33,7 @@ describe('Pizza', function() {
 
     it("creates a vegan gluten-free Pizza", function() {
         // Arrange
-        var size = "xlarge";
+        var size = "x-large";
         var toppings = ["mushrooms", "olives", "sausage"];
         var vegan = true;
         var glutenFree = true;
@@ -91,7 +91,7 @@ describe('Pizza.calculatePrice', function() {
 
     it("costs 24.99 for an x-large cheese", function() {
         // Arrange
-        var size = "xlarge";
+        var size = "x-large";
         var toppings = [];
         var testPizza = new Pizza(size, toppings);
 
@@ -104,7 +104,7 @@ describe('Pizza.calculatePrice', function() {
 
     it("costs 34.99 for a xxx-large cheese", function() {
         // Arrange
-        var size = "xxxlarge";
+        var size = "xxx-large";
         var toppings = [];
         var testPizza = new Pizza(size, toppings);
 
@@ -120,8 +120,8 @@ describe('Pizza.calculatePrice', function() {
         var smallOneTop = new Pizza("small", ["mushrooms"]);
         var medOneTop = new Pizza("medium", ["mushrooms"]);
         var largeOneTop = new Pizza("large", ["mushrooms"]);
-        var xlargeOneTop = new Pizza("xlarge", ["mushrooms"]);
-        var xxxlargeOneTop = new Pizza("xxxlarge", ["mushrooms"]);
+        var xlargeOneTop = new Pizza("x-large", ["mushrooms"]);
+        var xxxlargeOneTop = new Pizza("xxx-large", ["mushrooms"]);
 
         // Act
         smallOneTop.calculatePrice();
@@ -191,9 +191,9 @@ describe('Pizza.calculatePrice', function() {
 
     it("costs $4 more per topping for an x-large pizza", function() {
         // Arrange
-        var xlargeTwoTop = new Pizza("xlarge", ["mushrooms", "onions"]);
-        var xlargeThreeTop = new Pizza("xlarge", ["mushrooms", "onions", "peppers"]);
-        var xlargeFourTop = new Pizza("xlarge", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+        var xlargeTwoTop = new Pizza("x-large", ["mushrooms", "onions"]);
+        var xlargeThreeTop = new Pizza("x-large", ["mushrooms", "onions", "peppers"]);
+        var xlargeFourTop = new Pizza("x-large", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
 
         // Act
         xlargeTwoTop.calculatePrice();
@@ -208,9 +208,9 @@ describe('Pizza.calculatePrice', function() {
 
     it("costs $6 more per topping for a xxx-large pizza", function() {
         // Arrange
-        var xxxlargeTwoTop = new Pizza("xxxlarge", ["mushrooms", "onions"]);
-        var xxxlargeThreeTop = new Pizza("xxxlarge", ["mushrooms", "onions", "peppers"]);
-        var xxxlargeFourTop = new Pizza("xxxlarge", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
+        var xxxlargeTwoTop = new Pizza("xxx-large", ["mushrooms", "onions"]);
+        var xxxlargeThreeTop = new Pizza("xxx-large", ["mushrooms", "onions", "peppers"]);
+        var xxxlargeFourTop = new Pizza("xxx-large", ["mushrooms", "onions", "peppers", "pepperoncinis"]);
 
         // Act
         xxxlargeTwoTop.calculatePrice();
@@ -239,8 +239,8 @@ describe('Pizza.calculatePrice', function() {
         var smDaiya = new Pizza("small", ["mushrooms", "onions", "daiya"], false, true);
         var mdDaiya = new Pizza("medium", ["mushrooms", "onions", "daiya"], false, true);
         var lgDaiya = new Pizza("large", ["mushrooms", "onions", "daiya"], false, true);
-        var xlgDaiya = new Pizza("xlarge", ["mushrooms", "onions", "daiya"], false, true);
-        var xxxlgDaiya = new Pizza("xxxlarge", ["mushrooms", "onions", "daiya"], false, true);
+        var xlgDaiya = new Pizza("x-large", ["mushrooms", "onions", "daiya"], false, true);
+        var xxxlgDaiya = new Pizza("xxx-large", ["mushrooms", "onions", "daiya"], false, true);
 
         // Act
         smDaiya.calculatePrice();

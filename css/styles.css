@@ -1,0 +1,25 @@
+/*.pig-picker {
+  width: 64px;
+  height: 64px;
+}*/
+
+h3 {
+  text-align: center;
+}
+/*
+.game {
+  margin: 0 auto;
+}*/
+
+
+#roll-btn {
+
+}
+
+#pass-btn {
+
+}
+
+.highlighted {
+  background-color: pink;
+}

@@ -1,7 +1,11 @@
 body {
-  padding-top: 70px;
+  padding-top: 40px;
 }
 
-/*#choose-size, #choose-size, #choose-quantity, #checkout {
+img {
+  border-radius: 30%;
+}
+
+#checkout {
   display: none;
-}*/
+}

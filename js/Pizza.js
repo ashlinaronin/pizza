@@ -7,14 +7,11 @@ function Pizza(size, toppings, glutenFree, vegan) {
     this.toppings = toppings;
     this.glutenFree = glutenFree;
     this.vegan = vegan;
-    this.price = 0.0;
+    this.price = null;
 };
 
 Pizza.prototype.calculatePrice = function() {
-    // Base prices
-    var basePrice = 0.0;
-    var totalPrice = 0.0;
-
+    var basePrice, totalPrice;
     var basePrices = {
         "small": 11.99,
         "medium": 13.99,
@@ -22,7 +19,6 @@ Pizza.prototype.calculatePrice = function() {
         "xlarge": 24.99,
         "xxxlarge": 34.99
     };
-
     var toppingPrices = {
         "small": 1,
         "medium": 2,
@@ -42,9 +38,7 @@ Pizza.prototype.calculatePrice = function() {
     }
 
     // Add extra for gf
-    if (this.glutenFree === true) {
-        totalPrice += 2;
-    }
+    if (this.glutenFree) { totalPrice += 2; }
 
     // Keep two decimal points
     this.price = parseFloat(totalPrice.toFixed(2));

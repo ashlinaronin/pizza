@@ -232,7 +232,28 @@ describe('Pizza.calculatePrice', function() {
 
         // Assert
         expect(smGf.price).to.equal(14.99);
-    })
+    });
 
+    it("costs extra for daiya cheese depending on the size", function() {
+        // Arrange
+        var smDaiya = new Pizza("small", ["mushrooms", "onions", "daiya"], false, true);
+        var mdDaiya = new Pizza("medium", ["mushrooms", "onions", "daiya"], false, true);
+        var lgDaiya = new Pizza("large", ["mushrooms", "onions", "daiya"], false, true);
+        var xlgDaiya = new Pizza("xlarge", ["mushrooms", "onions", "daiya"], false, true);
+        var xxxlgDaiya = new Pizza("xxxlarge", ["mushrooms", "onions", "daiya"], false, true);
 
+        // Act
+        smDaiya.calculatePrice();
+        mdDaiya.calculatePrice();
+        lgDaiya.calculatePrice();
+        xlgDaiya.calculatePrice();
+        xxxlgDaiya.calculatePrice();
+
+        // Assert
+        expect(smDaiya.price).to.equal(15.99);
+        expect(mdDaiya.price).to.equal(20.99);
+        expect(lgDaiya.price).to.equal(29.99);
+        expect(xlgDaiya.price).to.equal(37.99);
+        expect(xxxlgDaiya.price).to.equal(53.99);
+    });
 });

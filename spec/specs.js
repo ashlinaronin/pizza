@@ -132,10 +132,10 @@ describe('Pizza.calculatePrice', function() {
 
         // Assert
         expect(smallOneTop.price).to.equal(11.99);
-        expect(smallOneTop.price).to.equal(13.99);
-        expect(smallOneTop.price).to.equal(19.99);
-        expect(smallOneTop.price).to.equal(24.99);
-        expect(smallOneTop.price).to.equal(34.99);
+        expect(medOneTop.price).to.equal(13.99);
+        expect(largeOneTop.price).to.equal(19.99);
+        expect(xlargeOneTop.price).to.equal(24.99);
+        expect(xxxlargeOneTop.price).to.equal(34.99);
 
     });
 });

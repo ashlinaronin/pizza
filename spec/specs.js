@@ -49,36 +49,69 @@ describe('Pizza', function() {
     });
 });
 
-// describe('Pizza.calculatePrice', function() {
-//     it("costs 11.99 for a small cheese", function() {
-//         // Arrange
-//         var size = "medium";
-//         var toppings = ["mushrooms", "olives", "sausage"];
-//
-//
-//         // Act
-//         var testPizza = new Pizza(size, toppings);
-//
-//         // Assert
-//         expect(testPizza.size).to.equal(size);
-//         expect(testPizza.toppings).to.eql(toppings);
-//         expect(testPizza.glutenFree).to.equal(glutenFree);
-//         expect(testPizza.vegan).to.equal(vegan);
-//     });
-//
-//     it("costs 13.99 for a medium cheese", function() {
-//
-//     });
-//
-//     it("costs 19.99 for a large cheese", function() {
-//
-//     });
-//
-//     it("costs 24.99 for an x-large cheese", function() {
-//
-//     });
-//
-//     it("costs 34.99 for a xxx-large cheese", function() {
-//
-//     });
-// });
+describe('Pizza.calculatePrice', function() {
+    it("costs 11.99 for a small cheese", function() {
+        // Arrange
+        var size = "small";
+        var toppings = [];
+        var testPizza = new Pizza(size, toppings);
+
+        // Act
+        testPizza.calculatePrice();
+
+        // Assert
+        expect(testPizza.price).to.equal(11.99);
+    });
+
+    it("costs 13.99 for a medium cheese", function() {
+        // Arrange
+        var size = "medium";
+        var toppings = [];
+        var testPizza = new Pizza(size, toppings);
+
+        // Act
+        testPizza.calculatePrice();
+
+        // Assert
+        expect(testPizza.price).to.equal(13.99);
+    });
+
+    it("costs 19.99 for a large cheese", function() {
+        // Arrange
+        var size = "large";
+        var toppings = [];
+        var testPizza = new Pizza(size, toppings);
+
+        // Act
+        testPizza.calculatePrice();
+
+        // Assert
+        expect(testPizza.price).to.equal(19.99);
+    });
+
+    it("costs 24.99 for an x-large cheese", function() {
+        // Arrange
+        var size = "xlarge";
+        var toppings = [];
+        var testPizza = new Pizza(size, toppings);
+
+        // Act
+        testPizza.calculatePrice();
+
+        // Assert
+        expect(testPizza.price).to.equal(24.99);
+    });
+
+    it("costs 34.99 for a xxx-large cheese", function() {
+        // Arrange
+        var size = "xxxlarge";
+        var toppings = [];
+        var testPizza = new Pizza(size, toppings);
+
+        // Act
+        testPizza.calculatePrice();
+
+        // Assert
+        expect(testPizza.price).to.equal(34.99);
+    });
+});

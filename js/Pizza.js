@@ -1,5 +1,6 @@
 function Pizza(size, toppings, glutenFree, vegan) {
     // Set gf and veg to false if not given inputs
+    // JavaScript doesn't allow you to declare default values in parameters like PHP
     glutenFree = typeof glutenFree !== 'undefined' ? glutenFree : false;
     vegan = typeof vegan !== 'undefined' ? vegan : false;
 
@@ -50,7 +51,7 @@ Pizza.prototype.calculatePrice = function() {
     if (this.glutenFree) { totalPrice += 2; }
 
     // Add extra for daiya
-    if ( this.toppings.indexOf("daiya") > -1) {
+    if (this.toppings.indexOf("daiya") > -1) {
         totalPrice += daiyaPrices[this.size];
     }
 

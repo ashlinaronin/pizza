@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One|Bangers|Bitter|Montserrat' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/Pizza.js"></script>
+    <script src="js/main.js"></script>
+    <title>Pizza Designer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="well">
+        <!-- All templates here -->
+
+        <div id="choose-size">
+          <div class="form-group">
+            <label for="size" class="hidden">choose size</label>
+            <select autofocus class="form-control" id="size">
+              <option value="">-- choose size --</option>
+              <option value="small">small</option>
+              <option value="medium">medium</option>
+              <option value="large">large</option>
+              <option value="xlarge">x-large</option>
+              <option value="xxxlarge">xxx-large</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="choose-toppings">
+          <h1>choose toppings.</h1>
+          <!-- find images and chnage urls -->
+          <div class="row">
+            <img src="img/mushrooms.gif" class="img-responsive pig-picker btn col-sm-4" id="mushrooms" alt="mushrooms">
+            <img src="img/three-pigs.png" class="img-responsive pig-picker btn col-sm-4" id="onions" alt="onions">
+            <img src="img/porky.ico" class="img-responsive pig-picker btn col-sm-4" id="sausage" alt="olives">
+          </div>
+          <div class="row">
+            <img src="img/rain-boots.jpeg" class="img-responsive pig-picker btn col-sm-4" id="pepperoni" alt="pepperoni">
+            <img src="img/human-pig.jpeg" class="img-responsive pig-picker btn col-sm-4" id="sausage" alt="sausage">
+            <img src="img/mrs-piggy.jpeg" class="img-responsive pig-picker btn col-sm-4" id="chicken" alt="chicken">
+          </div>
+          <div class="row">
+            <img src="img/rain-boots.jpeg" class="img-responsive pig-picker btn col-sm-4" id="daiya" alt="daiya">
+            <img src="img/human-pig.jpeg" class="img-responsive pig-picker btn col-sm-4" id="bacon-bits" alt="bacon-bits">
+            <img src="img/mrs-piggy.jpeg" class="img-responsive pig-picker btn col-sm-4" id="pepperoncinis" alt="pepperoncinis">
+          </div>
+        </div>
+
+
+        <div id="choose-quantity">
+          <div class="form-group">
+            <label for="quantity" class="hidden">quantity</label>
+            <input type="number" id="quantity" class="form-control" placeholder="how many pies?">
+        </div>
+
+
+        <div id="checkout">
+          <h1>your total is <span id="order-price"></span>.</h1>
+          <h3>please hold your credit card up to the camera on your device or <em>make it rain</em> to continue with your order.</h3>
+          <h5>thanks!</h5>
+        </div>
+
+
+      </div>
+    </div>
+  </body>
+</html>

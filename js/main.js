@@ -2,17 +2,60 @@ $(document).ready(function() {
 
   $("body").hide().fadeIn("slow");
 
-  var size, price, pizza;
+  var size, pizza;
+  var toppings = [];
+  var price = 0.0;
+  var totalPrice = 0.0;
   var glutenFree = false;
   var vegan = false;
-  var toppings = [];
+  var quantity = 1;
+
+  var writeOrderDescription = function() {
+    var description = "";
+
+    if (typeof size !== "undefined") {
+      description += quantity + " " + size;
+    } else {
+      description += quantity + " ";
+    }
+
+
+    // No toppings means a cheese pizza
+    if (toppings.length === 0) {
+      description += " cheese";
+    }
+
+    // Singular or plural depending on quantity
+    if (quantity == 1) {
+      description += " pizza";
+    } else {
+      description += " pizzas";
+    }
+
+    // Write the toppings if we have them
+    if (toppings.length !== 0) {
+      description += " with ";
+      for (var i = 0; i < toppings.length; i++) {
+        if (i === toppings.length-1) {
+          description += toppings[i];
+        } else if (i === toppings.length-2) {
+          description += toppings[i] + " and ";
+        } else {
+          description += toppings[i] + ", ";
+        }
+      };
+    }
+
+    description += ".";
+    return description;
+  }
 
 
   // Get size from size select menu
   $("#size").change(function() {
     $("#size option:selected").each(function() {
       size = $(this).text();
-      console.log("size is " + size);
+      $(".order-description").text(writeOrderDescription());
     });
   });
 
@@ -25,22 +68,44 @@ $(document).ready(function() {
       toppings.push(thisTopping);
     }
 
-    console.log("toppings are " + toppings);
+    $(".order-description").text(writeOrderDescription());
   });
 
 
   // Done with order
   $("#order-btn").click(function(event) {
-    pizza = new Pizza(size, toppings, glutenFree, vegan);
+    if (typeof size === "undefined") {
+      window.alert("please choose a size.");
+    } else {
+      pizza = new Pizza(size, toppings, glutenFree, vegan);
+      pizza.calculatePrice();
+      $("#order-price").text("$" + pizza.price);
+      $(".order-description").text(writeOrderDescription());
 
-    console.log("thanks for ordering: " + pizza.size + " " + pizza.toppings);
+      // Generate random order number
+      $("#order-number").text(Math.floor(Math.random() * 9999) + 1000);
+
+      $("#order").fadeOut("slow");
+      $("#checkout").hide().fadeIn("slow");
+    }
+  });
+
+  $("#quantity").change(function(event) {
+    quantity = $("#quantity").val();
+    var newOrderPrice = (pizza.price * quantity).toFixed(2);
+
+    console.log("newOrderPrice is " + newOrderPrice);
+    console.log("quantity is " + quantity);
+    console.log("desc is " + writeOrderDescription());
+
+    $("#order-price").text("$" + newOrderPrice);
+    $(".order-description").text(writeOrderDescription());
+  });
+
+  // Refresh for a new order
+  $("#new-order").click(function(event) {
+    location.reload();
   });
 
 
-
-  // should support back button between pages
 });
-// // Add extra for daiya
-// if (this.toppings.indexOf("daiya") > -1) {
-//     totalPrice += daiyaPrices[this.size];
-// }

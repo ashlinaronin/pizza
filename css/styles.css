@@ -2,8 +2,10 @@ body {
   padding-top: 40px;
 }
 
-img {
-  border-radius: 30%;
+topping-img {
+  /*border-radius: 30%;*/
+  height: 40px;
+  width: 40px;
 }
 
 #checkout {

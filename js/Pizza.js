@@ -56,6 +56,6 @@ Pizza.prototype.calculatePrice = function() {
     }
 
     // Keep two decimal points
-    this.price = parseFloat(totalPrice.toFixed(2));
-    return parseFloat(totalPrice.toFixed(2));
+    this.price = totalPrice.toFixed(2);
+    return totalPrice.toFixed(2);
 };
